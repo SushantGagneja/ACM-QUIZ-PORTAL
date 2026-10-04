@@ -1,0 +1,182 @@
+.page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 1.5rem 6rem;
+}
+
+.bulbRow {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.bulb {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px 2px rgba(242, 183, 5, 0.8);
+  animation: flicker 2.6s ease-in-out infinite;
+}
+
+.bulb:nth-child(3n + 1) {
+  animation-delay: 0.2s;
+}
+.bulb:nth-child(3n + 2) {
+  animation-delay: 0.9s;
+}
+.bulb:nth-child(3n + 3) {
+  animation-delay: 1.6s;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+  52% {
+    opacity: 1;
+  }
+}
+
+.eyebrow {
+  font-family: var(--body);
+  font-size: 0.95rem;
+  color: var(--slate);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(3.2rem, 11vw, 7.5rem);
+  text-align: center;
+  color: var(--cream);
+  text-shadow: 0 0 40px rgba(242, 183, 5, 0.25);
+}
+
+.titleAccent {
+  color: var(--gold);
+}
+
+.sub {
+  margin-top: 1.1rem;
+  max-width: 34ch;
+  text-align: center;
+  color: var(--slate);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.section {
+  width: 100%;
+  max-width: 920px;
+  margin-top: 5rem;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.75rem;
+}
+
+.sectionHead h2 {
+  font-size: 1.6rem;
+  color: var(--cream);
+}
+
+.sectionHead span {
+  color: var(--slate);
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ticket {
+  position: relative;
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.ticket:hover,
+.ticket:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--ticket-color, var(--gold));
+}
+
+.ticket::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--ticket-color, var(--gold));
+}
+
+.ticketTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticketNumber {
+  font-weight: 800;
+  font-family: var(--display);
+  font-size: 2.6rem;
+  color: var(--ticket-color, var(--gold));
+  opacity: 0.85;
+}
+
+.ticketQCount {
+  font-size: 0.82rem;
+  color: var(--slate);
+  border: 1px solid var(--hairline);
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+}
+
+.ticketName {
+  font-weight: 800;
+  font-size: 1.55rem;
+  margin-top: 0.3rem;
+  color: var(--cream);
+}
+
+.ticketTagline {
+  color: var(--slate);
+  font-size: 0.92rem;
+  margin-top: 0.2rem;
+}
+
+.footer {
+  margin-top: 5rem;
+  color: var(--slate);
+  font-size: 0.85rem;
+  text-align: center;
+}
