@@ -1,0 +1,124 @@
+.stage {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--cat-color, var(--gold));
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.heading {
+  font-size: clamp(2.4rem, 7vw, 3.4rem);
+  margin-bottom: 2.4rem;
+}
+
+.board {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 2.2rem 3rem;
+}
+
+.scoreDigits {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.digit {
+  font-weight: 800;
+  font-family: var(--display);
+  font-size: 5.5rem;
+  color: var(--cream);
+  background: var(--curtain-deep);
+  border-radius: 8px;
+  width: 3.4rem;
+  line-height: 1;
+  padding: 0.3rem 0;
+  animation: flip 0.6s ease both;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.slash {
+  font-weight: 800;
+  font-family: var(--display);
+  font-size: 5.5rem;
+  color: var(--slate);
+  align-self: center;
+}
+
+.total {
+  font-weight: 800;
+  font-family: var(--display);
+  font-size: 5.5rem;
+  color: var(--slate);
+  align-self: center;
+}
+
+.verdict {
+  margin-top: 1.8rem;
+  font-size: 1.1rem;
+  color: var(--cream);
+  max-width: 36ch;
+}
+
+.pct {
+  color: var(--cat-color, var(--gold));
+  font-weight: 700;
+}
+
+.actions {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.primary {
+  font-weight: 800;
+  background: var(--cat-color, var(--gold));
+  color: var(--curtain-deep);
+  border: none;
+  font-family: var(--display);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  padding: 0.75rem 1.8rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.primary:hover {
+  transform: scale(1.03);
+}
+
+.secondary {
+  border: 1px solid var(--hairline);
+  color: var(--cream);
+  font-size: 0.98rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  transition: border-color 0.15s ease;
+}
+
+.secondary:hover {
+  border-color: var(--slate);
+}

@@ -1,0 +1,258 @@
+.stage {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.2rem 1.25rem 4rem;
+}
+
+.topBar {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+.exit {
+  color: var(--slate);
+  font-size: 0.9rem;
+  border: 1px solid var(--hairline);
+  padding: 0.45rem 0.9rem;
+  border-radius: 100px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.exit:hover {
+  color: var(--cream);
+  border-color: var(--slate);
+}
+
+.categoryTag {
+  font-size: 0.9rem;
+  color: var(--cat-color, var(--gold));
+  letter-spacing: 0.02em;
+}
+
+/* ---- Intro ---- */
+.introCard {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 8vh;
+}
+
+.introTicket {
+  font-weight: 800;
+  font-family: var(--display);
+  font-size: 5rem;
+  color: var(--cat-color, var(--gold));
+}
+
+.introTitle {
+  font-weight: 800;
+  font-size: 2.6rem;
+}
+
+.introRules {
+  color: var(--slate);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 38ch;
+}
+
+.startBtn {
+  font-weight: 800;
+  margin-top: 1rem;
+  background: var(--cat-color, var(--gold));
+  color: var(--curtain-deep);
+  border: none;
+  font-family: var(--display);
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 2.4rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.startBtn:hover {
+  transform: scale(1.035);
+}
+
+.startBtn:active {
+  transform: scale(0.98);
+}
+
+/* ---- Progress row ---- */
+.progressRow {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.progressBulb {
+  flex: 1;
+  height: 6px;
+  border-radius: 100px;
+  background: var(--hairline);
+  overflow: hidden;
+}
+
+.progressBulbFill {
+  height: 100%;
+  width: 0%;
+  background: var(--cat-color, var(--gold));
+  transition: width 0.35s ease;
+}
+
+/* ---- Question panel ---- */
+.panel {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timerWrap {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 1.6rem;
+}
+
+.timerSvg {
+  transform: rotate(-90deg);
+}
+
+.timerTrack {
+  fill: none;
+  stroke: var(--hairline);
+  stroke-width: 5;
+}
+
+.timerFill {
+  fill: none;
+  stroke: var(--cat-color, var(--gold));
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear, stroke 0.2s ease;
+}
+
+.timerNum {
+  font-weight: 800;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 1.6rem;
+}
+
+.qCount {
+  color: var(--slate);
+  font-size: 0.88rem;
+  margin-bottom: 0.6rem;
+}
+
+.question {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  text-align: center;
+  max-width: 34ch;
+  margin-bottom: 2.2rem;
+}
+
+.options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 0.95rem 1.1rem;
+  color: var(--cream);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--cat-color, var(--gold));
+  transform: translateY(-1px);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.letter {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--slate);
+}
+
+.optionCorrect {
+  border-color: #6fe3c0;
+  background: rgba(111, 227, 192, 0.1);
+}
+.optionCorrect .letter {
+  border-color: #6fe3c0;
+  color: #6fe3c0;
+}
+
+.optionWrong {
+  border-color: var(--coral);
+  background: rgba(255, 93, 93, 0.1);
+}
+.optionWrong .letter {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+.fact {
+  margin-top: 1.6rem;
+  max-width: 42ch;
+  text-align: center;
+  color: var(--slate);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.factLabel {
+  color: var(--cat-color, var(--gold));
+  font-weight: 600;
+}
